@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Pulse Solutions — Strategic AI Communications &amp; Reputation Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0B0B0A;
+    --black-2:#141311;
+    --black-3:#1C1A17;
+    --paper:#F5F2EC;
+    --paper-2:#EDE8DE;
+    --ink:#141311;
+    --red:#E5443D;
+    --red-deep:#C22F29;
+    --muted-d:#B7B1A5;
+    --muted-d2:#847E72;
+    --muted-l:#6B655C;
+    --line-d:rgba(245,242,236,.14);
+    --line-l:rgba(20,19,17,.13);
+    --serif:"Newsreader",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--sans);background:var(--black);color:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 48px;}
+  section{padding:130px 0;position:relative;}
+  section.tight{padding:96px 0;}
+  .dark{background:var(--black);color:var(--paper);}
+  .darker{background:var(--black-2);color:var(--paper);}
+  .light{background:var(--paper);color:var(--ink);}
+
+  .kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:22px;display:flex;align-items:center;gap:14px;}
+  .light .kicker{color:var(--red-deep);}
+  .kicker::after{content:"";height:1px;width:56px;background:currentColor;opacity:.5;}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em;}
+  h2{font-size:56px;line-height:1.06;}
+  h3{font-size:28px;font-weight:500;line-height:1.2;}
+  .lede{font-family:var(--serif);font-weight:300;font-size:24px;line-height:1.55;color:var(--muted-d);max-width:34em;}
+  .light .lede{color:var(--muted-l);}
+  .body-text{font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--muted-d);max-width:38em;}
+  .light .body-text{color:var(--muted-l);}
+
+  /* ---------- nav ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,11,10,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-d);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;}
+  .logo-word{font-family:var(--serif);font-size:21px;letter-spacing:-.01em;}
+  .logo-word b{color:var(--red);font-weight:500;font-style:italic;}
+  nav ul{list-style:none;display:flex;gap:38px;margin:0;padding:0;}
+  nav a{text-decoration:none;font-size:13px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--muted-d);transition:color .2s;}
+  nav a:hover{color:var(--paper);}
+  .btn-nav{border:1px solid var(--line-d);border-radius:999px;padding:10px 22px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s,color .2s,border-color .2s;color:var(--paper);}
+  .btn-nav:hover{background:var(--red);border-color:var(--red);}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:230px;padding-bottom:120px;}
+  .hero h1{font-size:76px;line-height:1.04;max-width:15em;letter-spacing:-.015em;}
+  .hero h1 em{font-style:italic;color:var(--red);font-weight:400;}
+  .hero .lede{margin-top:30px;}
+  .hero-cta{display:flex;gap:18px;margin-top:48px;align-items:center;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:18px 32px;border-radius:2px;transition:background .2s,color .2s,transform .2s;}
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{background:var(--red-deep);transform:translateY(-1px);}
+  .btn-ghost{border:1px solid var(--line-d);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper);}
+  .light .btn-ghost{border:1px solid var(--line-l);color:var(--ink);}
+  .light .btn-ghost:hover{border-color:var(--ink);}
+
+  .hero-stats{display:grid;grid-template-columns:repeat(3,auto);gap:70px;margin-top:90px;padding-top:40px;border-top:1px solid var(--line-d);}
+  .hero-stats .n{font-family:var(--serif);font-size:44px;color:var(--red);line-height:1;}
+  .hero-stats .l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-d2);margin-top:10px;}
+
+  /* ---------- trust strip ---------- */
+  .trust{padding:60px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);}
+  .trust-inner{display:flex;align-items:center;gap:52px;flex-wrap:wrap;}
+  .trust-lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-d2);white-space:nowrap;}
+  .trust-names{display:flex;gap:52px;flex-wrap:wrap;font-family:var(--serif);font-size:26px;color:var(--muted-d);letter-spacing:.01em;}
+
+  /* ---------- section header pattern ---------- */
+  .shead{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px;}
+  .shead h2{max-width:11em;}
+
+  /* ---------- positioning cards ---------- */
+  .pos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1.5px solid var(--ink);}
+  .pos-card{padding:38px 30px 38px 0;border-bottom:1px solid var(--line-l);}
+  .pos-card .num{font-family:var(--serif);font-size:15px;color:var(--red-deep);margin-bottom:14px;display:block;}
+  .pos-card h3{font-size:23px;margin-bottom:12px;}
+  .pos-card p{font-size:15.5px;line-height:1.6;color:var(--muted-l);}
+
+  /* ---------- HITL split ---------- */
+  .hitl{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .hitl-visual{border:1px solid var(--line-d);padding:52px 44px;position:relative;}
+  .hitl-row{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid var(--line-d);}
+  .hitl-row:last-child{border-bottom:none;}
+  .hitl-row .k{font-family:var(--serif);font-size:20px;}
+  .hitl-row .v{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700;}
+
+  /* ---------- process ---------- */
+  .process-list{display:flex;flex-direction:column;margin-top:10px;}
+  .p-step{display:grid;grid-template-columns:110px 1fr;gap:36px;padding:36px 0;border-top:1px solid var(--line-d);align-items:start;}
+  .p-step:last-child{border-bottom:1px solid var(--line-d);}
+  .p-step .pn{font-family:var(--serif);font-size:46px;color:var(--red);line-height:1;}
+  .p-step h3{margin-bottom:10px;}
+  .p-step p{font-size:16px;line-height:1.6;color:var(--muted-d);max-width:40em;}
+
+  /* ---------- sectors ---------- */
+  .sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);margin-top:10px;}
+  .sector-card{background:var(--paper);padding:42px 40px;}
+  .sector-card .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-deep);font-weight:700;margin-bottom:14px;}
+  .sector-card h3{font-size:24px;margin-bottom:10px;}
+  .sector-card p{font-size:15px;line-height:1.6;color:var(--muted-l);}
+
+  /* ---------- authenticity ---------- */
+  .auth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;}
+  .auth-list{display:flex;flex-direction:column;gap:0;margin-top:6px;}
+  .auth-item{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line-d);}
+  .auth-item:last-child{border-bottom:none;}
+  .auth-item .ic{font-family:var(--serif);font-style:italic;color:var(--red);font-size:22px;min-width:26px;}
+  .auth-item p{font-size:16px;line-height:1.55;color:var(--muted-d);}
+
+  /* ---------- founder ---------- */
+  .founder{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;}
+  .founder-cred{display:flex;flex-direction:column;gap:0;margin-top:30px;}
+  .cred-row{padding:18px 0;border-bottom:1px solid var(--line-l);display:flex;justify-content:space-between;gap:20px;}
+  .cred-row:last-child{border-bottom:none;}
+  .cred-row .k{font-size:14px;color:var(--muted-l);}
+  .cred-row .v{font-family:var(--serif);font-size:17px;color:var(--ink);text-align:right;}
+
+  /* ---------- quote ---------- */
+  .pull{text-align:center;max-width:900px;margin:0 auto;}
+  .pull blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:38px;line-height:1.42;color:var(--paper);}
+  .pull .mark{font-family:var(--serif);font-size:70px;color:var(--red);opacity:.6;line-height:.5;display:block;margin-bottom:10px;}
+
+  /* ---------- cta ---------- */
+  .cta-box{text-align:center;padding:110px 0;}
+  .cta-box h2{max-width:16em;margin:0 auto;}
+  .cta-box .lede{margin:26px auto 0;}
+  .cta-box .hero-cta{justify-content:center;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--black-2);padding:60px 0 40px;border-top:1px solid var(--line-d);}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;}
+  .foot-col .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-d2);margin-bottom:10px;}
+  .foot-col .v{font-family:var(--serif);font-size:18px;color:var(--paper);}
+  .foot-bottom{margin-top:60px;padding-top:26px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;font-size:12px;color:var(--muted-d2);letter-spacing:.03em;}
+
+  @media (max-width:900px){
+    .wrap{padding:0 26px;}
+    section{padding:80px 0;}
+    .hero{padding-top:170px;}
+    .hero h1{font-size:46px;}
+    h2{font-size:38px;}
+    .shead,.hitl,.auth-grid,.founder{grid-template-columns:1fr;gap:36px;}
+    .pos-grid{grid-template-columns:1fr;}
+    .sector-grid{grid-template-columns:1fr;}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:30px;}
+    nav ul{display:none;}
+  }
+
+  /* link defaults */
+  a.inline-link{color:var(--red);text-decoration:underline;text-underline-offset:3px;}
+  a.inline-link:hover{color:var(--red-deep);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo-word">Creative <b>Pulse</b> Solutions</div>
+    <nav>
+      <ul>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#founder">Founder</a></li>
+      </ul>
+    </nav>
+    <a class="btn-nav" href="#contact">Start a conversation</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="dark hero">
+  <div class="wrap">
+    <div class="kicker">Strategic AI Communications &amp; Reputation Advisory</div>
+    <h1>Trust is the strategy.<br><em>AI is the tool.</em></h1>
+    <p class="lede">Creative Pulse Solutions advises institutions on reputation, narrative, and public trust in an AI-saturated communications landscape — combining two decades of visual-arts craft with applied AI expertise, always under human judgment.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact">Start a conversation</a>
+      <a class="btn btn-ghost" href="#approach">Our approach &darr;</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="n">20+</div><div class="l">Years in visual &amp; strategic communications</div></div>
+      <div><div class="n">HITL</div><div class="l">Human-in-the-loop, by design</div></div>
+      <div><div class="n">AI</div><div class="l">Certified practitioner, applied since 2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="dark trust" style="padding-top:0;">
+  <div class="wrap">
+    <div class="trust-inner">
+      <div class="trust-lbl">Built on work trusted by</div>
+      <div class="trust-names">
+        <span>Time</span><span>Nikon</span><span>Piaget</span><span>L'Oréal</span><span>Calvin Klein</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH / POSITIONING -->
+<section class="light" id="approach">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <div class="kicker">Our Position</div>
+        <h2>Strategic, not tactical.</h2>
+      </div>
+      <p class="lede">We are not a content studio. Creative Pulse Solutions is a strategic advisory practice — helping organizations manage reputation, narrative, and public trust, with AI-enabled production as one tool among many.</p>
+    </div>
+    <div class="pos-grid">
+      <div class="pos-card">
+        <span class="num">01</span>
+        <h3>Reputation, not content</h3>
+        <p>Every engagement starts with the question an executive actually has: how is this organization perceived, and what is at stake. Production follows the answer — it doesn't lead it.</p>
+      </div>
+      <div class="pos-card">
+        <span class="num">02</span>
+        <h3>A rare combination</h3>
+        <p>Two decades of professional visual-arts craft, formal AI certification, and the strategic instinct to know when technology helps a story and when it gets in the way.</p>
+      </div>
+      <div class="pos-card">
+        <span class="num">03</span>
+        <h3>Judgment, applied</h3>
+        <p>Staying informed on current events and public sentiment isn't a soft skill here — it's the discipline that keeps every recommendation grounded in what an audience will actually believe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HUMAN IN THE LOOP -->
+<section class="darker">
+  <div class="wrap">
+    <div class="hitl">
+      <div>
+        <div class="kicker">Our Philosophy</div>
+        <h2>Human-in-the-loop, by design.</h2>
+        <p class="body-text" style="margin-top:24px;">AI accelerates research, drafting, and production. It does not set strategy, make judgment calls, or stand behind an organization's reputation — that remains a human responsibility, at every stage.</p>
+        <p class="body-text" style="margin-top:18px;">As AI-generated content becomes common, authenticity becomes rarer — and more valuable. Organizations that can prove a human is accountable for what they say will be trusted more, not less.</p>
+      </div>
+      <div class="hitl-visual">
+        <div class="hitl-row"><span class="k">Research &amp; drafting</span><span class="v">AI-assisted</span></div>
+        <div class="hitl-row"><span class="k">Strategic framing</span><span class="v">Human-led</span></div>
+        <div class="hitl-row"><span class="k">Judgment calls</span><span class="v">Human-led</span></div>
+        <div class="hitl-row"><span class="k">Production &amp; editing</span><span class="v">AI-assisted</span></div>
+        <div class="hitl-row"><span class="k">Final accountability</span><span class="v">Human-led</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="dark" id="process">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <div class="kicker">Our Process</div>
+        <h2>Process over portfolio.</h2>
+      </div>
+      <p class="lede">We don't lead with a gallery of past work. We lead with how we think — the methodology that gets an organization from reputational risk to a trusted, authentic public voice.</p>
+    </div>
+    <div class="process-list">
+      <div class="p-step">
+        <div class="pn">01</div>
+        <div><h3>Listen &amp; diagnose</h3><p>We start with your stakeholders, not your brand guidelines — understanding how you're actually perceived, where the exposure sits, and what's realistically at stake.</p></div>
+      </div>
+      <div class="p-step">
+        <div class="pn">02</div>
+        <div><h3>Strategic framework</h3><p>A narrative framework — not a mood board — sets the position, the tone, and the guardrails before a single asset is produced.</p></div>
+      </div>
+      <div class="p-step">
+        <div class="pn">03</div>
+        <div><h3>Human-in-the-loop production</h3><p>AI accelerates drafting and production; every output is reviewed, edited, and approved under direct human oversight before it reaches an audience.</p></div>
+      </div>
+      <div class="p-step">
+        <div class="pn">04</div>
+        <div><h3>Delivery &amp; measurement</h3><p>We track how the work lands — sentiment, reach, and trust signals — and adjust the approach as the environment shifts.</p></div>
+      </div>
+      <div class="p-step">
+        <div class="pn">05</div>
+        <div><h3>Ongoing counsel</h3><p>Reputation isn't a project, it's a standing responsibility. We remain an advisor, not a one-time vendor.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="darker tight">
+  <div class="wrap pull">
+    <span class="mark">&ldquo;</span>
+    <blockquote>Organizations don't need more content. They need someone who understands what's at stake when they speak — and the judgment to know how AI should, and shouldn't, be involved.</blockquote>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="light" id="sectors">
+  <div class="wrap">
+    <div class="shead">
+      <div>
+        <div class="kicker">Who We Serve</div>
+        <h2>Sectors where trust is the whole game.</h2>
+      </div>
+      <p class="lede">Public and institutional organizations face a different bar than consumer brands — every message carries reputational and public-interest weight. That's where this practice is built to operate.</p>
+    </div>
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="tag">Public Sector</div>
+        <h3>Government &amp; Crown Agencies</h3>
+        <p>Communications that hold up to public scrutiny, freedom-of-information requests, and shifting political attention.</p>
+      </div>
+      <div class="sector-card">
+        <div class="tag">Economic Development</div>
+        <h3>Regional &amp; Development Agencies</h3>
+        <p>Narrative and investment-readiness communications for organizations building a region's economic story.</p>
+      </div>
+      <div class="sector-card">
+        <div class="tag">Health &amp; Institutions</div>
+        <h3>Health &amp; Public Institutions</h3>
+        <p>Sensitive, dignified communications for organizations where public trust and patient/community confidence are the product.</p>
+      </div>
+      <div class="sector-card">
+        <div class="tag">Education</div>
+        <h3>Higher Education &amp; Recruitment</h3>
+        <p>Authentic institutional storytelling for universities and colleges competing for trust as much as enrolment.</p>
+      </div>
+      <div class="sector-card">
+        <div class="tag">Professional Services</div>
+        <h3>Law Firms &amp; Advisory Practices</h3>
+        <p>Reputation-first communications for firms where every public statement is also a professional liability.</p>
+      </div>
+      <div class="sector-card">
+        <div class="tag">Enterprise</div>
+        <h3>Regional &amp; National Brands</h3>
+        <p>Executive branding and communications for leaders who need to be seen clearly, consistently, and credibly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHENTICITY -->
+<section class="dark">
+  <div class="wrap">
+    <div class="auth-grid">
+      <div>
+        <div class="kicker">Why Now</div>
+        <h2>Authenticity is becoming the scarce resource.</h2>
+        <p class="body-text" style="margin-top:24px;">As AI-generated content floods every channel, the organizations that stand out will be the ones that can prove a real, accountable human stands behind what they say.</p>
+      </div>
+      <div class="auth-list">
+        <div class="auth-item"><span class="ic">01</span><p>Rising concern over AI-generated misinformation is raising the bar for verified, human-led communication.</p></div>
+        <div class="auth-item"><span class="ic">02</span><p>Audiences are actively seeking genuine connection over generic, machine-produced messaging.</p></div>
+        <div class="auth-item"><span class="ic">03</span><p>Boards and leadership increasingly expect visible human oversight of anything AI-assisted.</p></div>
+        <div class="auth-item"><span class="ic">04</span><p>Reputation risk is now a standing agenda item, not a crisis-only concern.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="light" id="founder">
+  <div class="wrap">
+    <div class="founder">
+      <div>
+        <div class="kicker">Founder</div>
+        <h2>Belinda Muller</h2>
+        <p class="lede" style="margin-top:18px;">Strategic communications advisor and AI-certified practitioner, with two decades of professional visual-arts craft behind the judgment she brings to every engagement.</p>
+      </div>
+      <div>
+        <p class="body-text">Belinda's background spans two decades of high-stakes professional visual-arts work for globally recognized brands — training in observation, narrative, and audience that now underpins a strategic communications and reputation-advisory practice built around applied AI expertise and human-in-the-loop judgment.</p>
+        <div class="founder-cred">
+          <div class="cred-row"><span class="k">Professional background</span><span class="v">Visual arts &amp; photography, 20+ years</span></div>
+          <div class="cred-row"><span class="k">AI expertise</span><span class="v">Certified practitioner, applied AI workflows<br><span style="display:inline-block;margin-top:6px;">Vanderbilt University, Adobe</span></span></div>
+          <div class="cred-row"><span class="k">Core discipline</span><span class="v">Strategic communications &amp; reputation advisory</span></div>
+          <div class="cred-row"><span class="k">Based in</span><span class="v">Halifax, Nova Scotia</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="darker cta-box" id="contact">
+  <div class="wrap">
+    <div class="kicker" style="justify-content:center;">Let's Talk</div>
+    <h2>Ready for a communications partner who understands what's actually at stake?</h2>
+    <p class="lede">A first conversation costs nothing — and it will tell you quickly whether this is the right fit.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#7018151c1c1f30130215110419061500051c0315031f1c0504191f1e035e131f1d">Start a conversation</a>
+      <a class="btn btn-ghost" href="#approach">Revisit our approach</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="k">Practice</div>
+        <div class="v">Creative Pulse Solutions</div>
+      </div>
+      <div class="foot-col">
+        <div class="k">Email</div>
+        <div class="v"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7b131e1717143b18091e1a0f120d1e0b0e17081e0814170e0f1214150855181416">[email&#160;protected]</a></div>
+      </div>
+      <div class="foot-col">
+        <div class="k">Based in</div>
+        <div class="v">Halifax, Nova Scotia</div>
+      </div>
+      <div class="foot-col">
+        <div class="k">LinkedIn</div>
+        <div class="v">/in/belindamuller</div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Creative Pulse Solutions</span>
+      <span>Strategic AI Communications &amp; Reputation Advisory</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
