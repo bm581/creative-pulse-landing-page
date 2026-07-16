@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0B0A">
 <meta name="description" content="Creative Pulse Solutions provides strategic AI communications and reputation advisory for public institutions, professional services, and organizations navigating trust in an AI-saturated landscape.">
 <link rel="canonical" href="https://creativepulsesolutions.co/">
 <meta property="og:type" content="website">
@@ -10,6 +12,8 @@
 <meta property="og:title" content="Creative Pulse Solutions — Strategic AI Communications & Reputation Advisory">
 <meta property="og:description" content="Strategic communications, reputation, narrative, and public-trust advisory with human judgment at the centre of every AI-assisted workflow.">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Creative Pulse Solutions — Strategic AI Communications & Reputation Advisory">
+<meta name="twitter:description" content="Strategic communications, reputation, narrative, and public-trust advisory with human judgment at the centre of every AI-assisted workflow.">
 <title>Creative Pulse Solutions — Strategic AI Communications &amp; Reputation Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,6 +156,22 @@
   .cta-box .lede{margin:26px auto 0;}
   .cta-box .hero-cta{justify-content:center;}
 
+
+  /* ---------- contact form ---------- */
+  .contact-section{background:var(--paper);color:var(--ink);}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start;}
+  .contact-copy .lede{color:var(--muted-l);margin-top:20px;}
+  .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .contact-form .full{grid-column:1 / -1;}
+  .contact-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;color:var(--muted-l);}
+  .contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line-l);background:#fff;color:var(--ink);font:inherit;padding:14px 16px;border-radius:2px;}
+  .contact-form textarea{min-height:150px;resize:vertical;}
+  .contact-form input:focus,.contact-form textarea:focus{outline:2px solid rgba(229,68,61,.25);border-color:var(--red);}
+  .contact-form button{border:0;cursor:pointer;justify-self:start;}
+  .contact-note{font-size:13px;line-height:1.5;color:var(--muted-l);margin-top:14px;}
+  .form-success{display:none;margin-top:18px;padding:14px 16px;border:1px solid rgba(31,122,76,.35);background:rgba(31,122,76,.08);color:#1f6f46;}
+  .form-success.show{display:block;}
+
   /* ---------- footer ---------- */
   footer{background:var(--black-2);padding:60px 0 40px;border-top:1px solid var(--line-d);}
   .foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 40px;align-items:start;}
@@ -167,7 +187,7 @@
     .hero{padding-top:170px;}
     .hero h1{font-size:46px;}
     h2{font-size:38px;}
-    .shead,.hitl,.auth-grid,.founder{grid-template-columns:1fr;gap:36px;}
+    .shead,.hitl,.auth-grid,.founder,.contact-grid{grid-template-columns:1fr;gap:36px;}
     .pos-grid{grid-template-columns:1fr;}
     .sector-grid{grid-template-columns:1fr;}
     .hero-stats{grid-template-columns:1fr 1fr;gap:30px;}
@@ -178,12 +198,49 @@
 
   @media (max-width:560px){
     .foot-grid{grid-template-columns:1fr;}
+    .contact-form{grid-template-columns:1fr;}
+    .contact-form .full{grid-column:auto;}
   }
 
   /* link defaults */
   a.inline-link{color:var(--red);text-decoration:underline;text-underline-offset:3px;}
   a.inline-link:hover{color:var(--red-deep);}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Creative Pulse Solutions",
+  "url": "https://creativepulsesolutions.co/",
+  "email": "hello@creativepulsesolutions.co",
+  "founder": {
+    "@type": "Person",
+    "name": "Belinda Muller"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Halifax",
+    "addressRegion": "Nova Scotia",
+    "addressCountry": "CA"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/belindamuller"
+  ],
+  "description": "Strategic AI communications and reputation advisory for organizations navigating trust, narrative, and public scrutiny."
+}
+</script>
+
+<!-- Google Analytics: replace G-XXXXXXXXXX with your Measurement ID, then remove the comment markers.
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
 </head>
 <body>
 
@@ -198,7 +255,7 @@
         <li><a href="#founder">Founder</a></li>
       </ul>
     </nav>
-    <a class="btn-nav" href="#contact">Start a conversation</a>
+    <a class="btn-nav" href="https://calendly.com/hello-creativepulsesolutions/30min" target="_blank" rel="noopener">Book a consultation</a>
   </div>
 </header>
 
@@ -209,8 +266,8 @@
     <h1>Trust is the strategy.<br><em>AI is the tool.</em></h1>
     <p class="lede">Creative Pulse Solutions advises institutions on reputation, narrative, and public trust in an AI-saturated communications landscape — combining two decades of visual-arts craft with applied AI expertise, always under human judgment.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#contact">Start a conversation</a>
-      <a class="btn btn-ghost" href="#approach">Our approach &darr;</a>
+      <a class="btn btn-primary" href="https://calendly.com/hello-creativepulsesolutions/30min" target="_blank" rel="noopener">Book a Free Consultation</a>
+      <a class="btn btn-ghost" href="mailto:hello@creativepulsesolutions.co?subject=Website%20Enquiry">Email Us</a>
     </div>
     <div class="hero-stats">
       <div><div class="n">20+</div><div class="l">Years in visual &amp; strategic communications</div></div>
@@ -425,6 +482,47 @@
   </div>
 </section>
 
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="enquiry">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <div class="kicker">Send an Enquiry</div>
+        <h2>Tell us what is at stake.</h2>
+        <p class="lede">Share a little about your organization, challenge, or opportunity. Your message will be sent directly to hello@creativepulsesolutions.co.</p>
+        <div id="form-success" class="form-success" role="status">Thank you. Your enquiry has been sent.</div>
+      </div>
+      <form class="contact-form" action="https://formsubmit.co/hello@creativepulsesolutions.co" method="POST">
+        <input type="hidden" name="_subject" value="New Creative Pulse Solutions website enquiry">
+        <input type="hidden" name="_next" value="https://creativepulsesolutions.co/?submitted=1#enquiry">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="full">
+          <label for="company">Organization</label>
+          <input id="company" name="organization" type="text" autocomplete="organization">
+        </div>
+        <div class="full">
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="full">
+          <button class="btn btn-primary" type="submit">Send Enquiry</button>
+          <p class="contact-note">The first test submission will send an activation email to hello@creativepulsesolutions.co. Confirm it once to enable future submissions.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -451,6 +549,14 @@
     </div>
   </div>
 </footer>
+
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('submitted') === '1') {
+    document.getElementById('form-success')?.classList.add('show');
+  }
+</script>
 
 </body>
 </html>
