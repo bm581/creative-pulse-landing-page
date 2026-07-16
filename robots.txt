@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://creativepulsesolutions.co/sitemap.xml
+Sitemap: https://bm581.github.io/creative-pulse-landing-page/sitemap.xml

@@ -1,0 +1,16 @@
+{
+  "name": "Creative Pulse Solutions",
+  "short_name": "Creative Pulse",
+  "start_url": "/creative-pulse-landing-page/",
+  "display": "standalone",
+  "background_color": "#0B0B0A",
+  "theme_color": "#0B0B0A",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
